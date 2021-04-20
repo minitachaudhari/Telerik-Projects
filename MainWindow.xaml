@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="GridViewDataTable.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:my="clr-namespace:GridViewDataTable"
+        Height="700" Width="700">
+    <UserControl.DataContext>
+        <my:MyViewModel />
+    </UserControl.DataContext>
+
+    <Grid>        
+        <telerik:RadGridView ItemsSource="{Binding DataTable.DefaultView}" 
+                         AutoGenerateColumns="False" 
+                         GroupRenderMode="Flat" 
+                         Margin="5">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding LastName}"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding City}"/>
+
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+       
+    </Grid>
+</UserControl>
